@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FFXIV Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Add Basic Structure -->
     <!-- Start Quiz Button -->
@@ -13,43 +15,47 @@
         <button class="startButton">Click when ready Warrior of Light</button>
     </div>
     <!-- Quiz Main Container -->
-    <div class="quiz" style = "display: none;">
-    <!-- Add divs for the question, 4 choices, current score, and a timer -->
-    <article class="question">
-        <p>ApplyQuestionHere</p>
-    </article>
-    <div class="choices">
-        <button class="choice" id="A"></button>
-        <button class="choice" id="B"></button>
-        <button class="choice" id="C"></button>
-        <button class="choice" id="D"></button>
-    </div>
-    <div class="timer">
+    <!-- no box bug fixing -->
+    <!-- <div class="quiz" style="display: none;"> -->
+    <!-- Below Line for TA Question/Bug Fixing -->
+    <div class="quiz" style="display: block;">
+        <!-- Add divs for the question, 4 choices, current score, and a timer -->
+        <article class="question">
+            <!-- <p>ApplyQuestionHere</p> -->
+        </article>
+        <div class="choices">
+            <button class="choice" id="A" onclick="answerChecker('A')"></button>
+            <button class="choice" id="B" onclick="answerChecker('B')"></button>
+            <button class="choice" id="C" onclick="answerChecker('C')"></button>
+            <button class="choice" id="D" onclick="answerChecker('D')"></button>
+        </div>
+        <div class="timer">
 
-    </div>
-    <div class="quizLength">
+        </div>
+        <div class="quizLength">
 
-    </div>
-    <div class="validity">
-        
-    </div>
-    <div class="score">
+        </div>
+        <div class="validity">
 
-    </div>
+        </div>
+        <div class="score">
+
+        </div>
     </div>
     <!-- Add Quiz Finished Layout -->
-    <div class="finished" style = "display: none;">
-    <div class="score">
+    <div class="finished" style="display: none;">
+        <div class="score">
 
-    </div>
-    <div class="submitScore">
-        <!-- Add Form for user submit -->
-    </div>
-    <!-- Clickable Hall of Fame -->
-    <div class="hallOfFame">
+        </div>
+        <div class="submitScore">
+            <!-- Add Form for user submit -->
+        </div>
+        <!-- Clickable Hall of Fame -->
+        <div class="hallOfFame">
 
-    </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
