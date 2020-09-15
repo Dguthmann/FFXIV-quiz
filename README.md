@@ -29,7 +29,7 @@ The user can enter their information for the high score screen.
 
 ## Further Development Plans
 
-<!-- To be added later -->
+If I have more time later, would like to have a the score be ordered by values.
 
 ## Changelog
 

@@ -131,7 +131,11 @@ function timerDisplay() {
 // Create a Function to End the Quiz
 function endQuiz() {
     //Way 1: User Answered All Questions
-    var timeScore = timeTotal-timeLeft;
+    if (timeLeft == 0) {
+        var timeScore = 0;
+    } else {
+        timeScore = timeTotal - timeLeft;
+    }
     clearInterval(timerValue);
     timeLeft = 0;
     console.log("final: " + userScore);
@@ -167,7 +171,7 @@ function endQuiz() {
     });
     // List Updated Hall of Fame
 
-    
+
 
 }
 
