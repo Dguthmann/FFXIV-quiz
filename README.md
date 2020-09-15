@@ -33,4 +33,5 @@ The user can enter their information for the high score screen.
 
 ## Changelog
 
+2020-09-15: Bug fixing styling, and fixing end score function
 2020-09-14: Creation of files, coding the script.js file, multiple commits during the day as it was fleshed out and bug tested.

@@ -16,9 +16,9 @@
     </div>
     <!-- Quiz Main Container -->
     <!-- no box bug fixing -->
-    <!-- <div class="quiz" style="display: none;"> -->
+    <div class="blockQ" style="display: none;">
     <!-- Below Line for TA Question/Bug Fixing -->
-    <div class="quiz" style="display: block;">
+    <!-- <div class="blockQ" style="display: block;"> -->
         <!-- Add divs for the question, 4 choices, current score, and a timer -->
         <article class="question">
             <!-- <p>ApplyQuestionHere</p> -->
@@ -44,14 +44,20 @@
     </div>
     <!-- Add Quiz Finished Layout -->
     <div class="finished" style="display: none;">
-        <div class="score">
+        <div class="scoreFinal">
 
         </div>
         <div class="submitScore">
             <!-- Add Form for user submit -->
+            <form>
+                <input placeholder="firstName" id="firstName" />
+                <input placeholder="lastName" id="lastName" />
+                <button id="submit">Submit</button>
+            </form>
         </div>
         <!-- Clickable Hall of Fame -->
-        <div class="hallOfFame">
+        <div class="hall-of-fame">
+            <h1>Past Scores</h1>
 
         </div>
     </div>
