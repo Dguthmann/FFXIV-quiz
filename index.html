@@ -17,28 +17,29 @@
     <!-- Quiz Main Container -->
     <!-- no box bug fixing -->
     <div class="blockQ" style="display: none;">
-    <!-- Below Line for TA Question/Bug Fixing -->
-    <!-- <div class="blockQ" style="display: block;"> -->
         <!-- Add divs for the question, 4 choices, current score, and a timer -->
         <article class="question">
             <!-- <p>ApplyQuestionHere</p> -->
         </article>
+        <br>
         <div class="choices">
             <button class="choice" id="A" onclick="answerChecker('A')"></button>
             <button class="choice" id="B" onclick="answerChecker('B')"></button>
+            <br>
             <button class="choice" id="C" onclick="answerChecker('C')"></button>
             <button class="choice" id="D" onclick="answerChecker('D')"></button>
+            <br>
         </div>
+        <!-- timer div to be filled by JS -->
         <div class="timer">
 
         </div>
+        <!-- Question X of Y div to be filled by JS -->
         <div class="quizLength">
 
         </div>
+        <!-- Last Question Correct/incorrect div to be filled by JS -->
         <div class="validity">
-
-        </div>
-        <div class="score">
 
         </div>
     </div>
@@ -47,19 +48,23 @@
         <div class="scoreFinal">
 
         </div>
-        <div class="submitScore">
-            <!-- Add Form for user submit -->
-            <form>
-                <input placeholder="firstName" id="firstName" />
-                <input placeholder="lastName" id="lastName" />
-                <button id="submit">Submit</button>
-            </form>
-        </div>
-        <!-- Clickable Hall of Fame -->
-        <div class="hall-of-fame">
-            <h1>Past Scores</h1>
+            <div class="submitScore">
+                <!-- Add Form for user submit -->
+                <form>
+                    <input placeholder="firstName" id="firstName" />
+                    <br>
+                    <input placeholder="lastName" id="lastName" />
+                    <br>
+                    <button id="submit">Submit</button>
+                </form>
+            </div>
+            <!-- Clickable Hall of Fame -->
+            <div id="hall-of-fame">
+            </div>
+            <div>
+                <img src="https://pbs.twimg.com/media/EA5a6XxUEAEq6Mj?format=jpg&name=small" alt="Duty Complete" width="100%">
+            </div>
 
-        </div>
     </div>
     <script src="script.js"></script>
 </body>

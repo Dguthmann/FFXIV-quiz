@@ -1,0 +1,44 @@
+body{
+    background-image: url("https://mcdn.wallpapersafari.com/medium/68/82/JEyFZ8.jpg");
+    background-size: 100vw 100vh;
+}
+
+button{
+    background-color: black;
+    color: cornsilk;
+    margin: 0 auto;
+}
+
+.start{
+    margin-left: 35vw;
+    margin-top: 35vh;
+    width: 15vw;
+    height: 15vh;
+    background-image: url("https://img.finalfantasyxiv.com/lds/pc/global/images/itemicon/ce/ce51d5f98036f79ece94d35140d4aacfb17b8756.png?n5.25");
+    background-size: 100% 100%;
+    border: 2vw solid green;
+}
+
+.blockQ{
+    margin-left: 20vw;
+    margin-top: 20vh;
+    width: 50vw;
+    height: 50vh;
+    text-align: center;
+    background-color: white;
+    border: 2vw solid gold;
+}
+
+.finished {
+    margin-left: 20vw;
+    margin-top: 10vh;
+    width: 50vw;
+    height: 70vh;
+    text-align: center;
+    background-color: white;
+    border: 2vw solid red;
+}
+
+.startbutton{
+    margin: 0 auto;
+}

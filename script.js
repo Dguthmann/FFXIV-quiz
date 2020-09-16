@@ -1,62 +1,109 @@
 // set variable for block div
-var block = document.querySelector(".blockQ")
+var block = document.querySelector(".blockQ");
 // set variable for question
 var quiz = document.querySelector(".question");
 // set variable for the final screens
-var finished = document.querySelector(".finished")
+var finished = document.querySelector(".finished");
 // set variable for the final screens
-var pastScores = document.querySelector(".hall-of-fame")
+var pastScores = document.getElementById("hall-of-fame");
 // set variables for choices
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 var correct;
-// Consider if time, adding a special image for each question
-
 // set variable for timer
 var timeClock = document.querySelector(".timer");
 // set variable for score
 var userScore = 0;
-var userTracker = document.querySelector(".score");
 var userFinal = document.querySelector(".scoreFinal");
 // set variable for Progress of Quiz
 var progress = document.querySelector(".quizLength");
 // set variable for Quiz End
 var finished = document.querySelector(".finished");
+// Logic Check to allow for only 1 submit button push
+var hitSubmit = true;
 // set hall of fame
 var hallOfFame = [
     {
         myName: "Yuroko Reizei",
-        myScore: 3,
-        myTime: 50
+        myScore: 9,
+        myTime: 75
     }
 ]
 
 // Write in Questions (array of objects(Question: , ChoiceA:, Choice2:, Choice3:, Choice4:, CorrectAnswer : 1))
 var questions = [
     {
-        question: "Example Question",
-        choiceA: "A is right",
-        choiceB: "B is wrong",
-        choiceC: "C is wrong",
-        choiceD: "D is wrong",
+        question: "The player character is known what title as the game progresses?",
+        choiceA: "A: The Arbiter",
+        choiceB: "B: Warrior of Light",
+        choiceC: "C: Deathwalker",
+        choiceD: "D: Timelord",
+        correct: "B"
+    },
+    {
+        question: "What was the first additional class to be added to the game?",
+        choiceA: "A: Dark Knight",
+        choiceB: "B: Red Mage",
+        choiceC: "C: Dancer",
+        choiceD: "D: Ninja",
+        correct: "D"
+    },
+    {
+        question: "Which japanese mythological figure as of patch 5.3 has not be in a trial?",
+        choiceA: "A: Amaterasu",
+        choiceB: "B: Byakko",
+        choiceC: "C: Susano",
+        choiceD: "D: Tsukiyomi",
         correct: "A"
     },
     {
-        question: "Example Question",
-        choiceA: "A is right",
-        choiceB: "B is wrong",
-        choiceC: "C is wrong",
-        choiceD: "D is wrong",
-        correct: "A"
+        question: "How many Heavensward Relic Weapons (lux/anima weapons) are in a complete set?",
+        choiceA: "A: 10",
+        choiceB: "B: 13",
+        choiceC: "C: 15",
+        choiceD: "D: 17",
+        correct: "B"
     },
     {
-        question: "Example Question",
-        choiceA: "A is right",
-        choiceB: "B is wrong",
-        choiceC: "C is wrong",
-        choiceD: "D is wrong",
+        question: "How many non-combat classes are playable in the game as of patch 5.3?",
+        choiceA: "A: 5",
+        choiceB: "B: 8",
+        choiceC: "C: 10",
+        choiceD: "D: 11",
+        correct: "D"
+    },
+    {
+        question: "Previous to 5.3, how many Main Story Quests were between 2.0 and start of Heavensward?",
+        choiceA: "A: 45",
+        choiceB: "B: 86",
+        choiceC: "C: 100",
+        choiceD: "D: 126",
+        correct: "C"
+    },
+    {
+        question: "The Shadowbringers Expansion Explores what continent region in game?",
+        choiceA: "A: Gyr Abania",
+        choiceB: "B: Black Shroud",
+        choiceC: "C: Norvrandt",
+        choiceD: "D: Abalathia's Spine",
+        correct: "C"
+    },
+    {
+        question: "A Player has a chance to parry, dodge, and block (if shield equipped) if what is true?",
+        choiceA: "A: The player is targeting the attacker",
+        choiceB: "B: The player is a higher level than the attacker",
+        choiceC: "C: The attacker is not directly behind the player",
+        choiceD: "D: The attacker is in a 90 cone directly in front of the player",
+        correct: "D"
+    },
+    {
+        question: "Which is not a grand company in the game?",
+        choiceA: "A: The Frozen Knighthood",
+        choiceB: "B: The Maelstrom",
+        choiceC: "C: The Immortal Flames",
+        choiceD: "D: The Order of the Twin Adder",
         correct: "A"
     }
 ]
@@ -84,7 +131,7 @@ function answerChecker(answer) {
     if (questions[questionCurrentIndex].correct === answer) {
         userScore++;
         correctAnswer();
-        console.log(userScore);
+        // console.log(userScore);
     } else {
         timeLeft += 10;
         wrongAnswer();
@@ -138,7 +185,7 @@ function endQuiz() {
     }
     clearInterval(timerValue);
     timeLeft = 0;
-    console.log("final: " + userScore);
+    // console.log("final: " + userScore);
     //Way 2: User is out of time
     block.style.display = "none";
     finished.style.display = "block";
@@ -149,7 +196,9 @@ function endQuiz() {
     var lNameInput = document.querySelector("#lastName");
     submitEl.addEventListener("click", function (event) {
         event.preventDefault();
-        console.log(event);
+        // console.log(event);
+        // stopping people from submitting more than once on a single run
+        if(hitSubmit){
         var response = "Thank you for your submission " + fNameInput.value + " " + lNameInput.value;
         userFinal.textContent = response;
         //Create object of user
@@ -158,22 +207,29 @@ function endQuiz() {
             myScore: userScore,
             myTime: timeScore
         }
-        console.log(hallOfFame);
+        // console.log(hallOfFame);
         //Push score into Hall of Fame
         hallOfFame.push(userHof);
-        console.log(hallOfFame);
+        // console.log(hallOfFame);
+        // clearScores('hall-of-fame')
+        var pastScore = document.createElement("h2");
+        pastScore.textContent = `Past Scores`
+        pastScores.appendChild(pastScore);
+        hitSubmit = false;
         for (var k = 0; k < hallOfFame.length; k++) {
             var hof = hallOfFame[k];
             var layoutScore = document.createElement("p");
-            layoutScore.textContent = `Name: ${hof.myName}   Score: ${hof.myScore}   Time Left: ${hof.myTime}`
+            layoutScore.textContent = `${hof.myName} -- ${hof.myScore} correct -- ${hof.myTime} sec left`
             pastScores.appendChild(layoutScore);
         }
+    }
     });
     // List Updated Hall of Fame
-
+    
 
 
 }
+
 
 var timerValue;
 // Function to Start the quiz
