@@ -3,7 +3,7 @@
 ### Author: David Guthmann
 
 github: https://github.com/Dguthmann/  
-livesite: To Add Later
+livesite: https://dguthmann.github.io/FFXIV-quiz/
 
 ## List of Contents
 
@@ -11,6 +11,7 @@ index.html
 script.js
 style.css
 README.md
+screenshot.png
 
 ## Basic Overview of Project
 
@@ -22,7 +23,7 @@ Writing of questions are based off of the 5.3 patch, or patch of question will b
 
 ## Screenshot of Website
 
-<!-- To be added later -->
+![Site Screenshot](images/screenshot.png)
 
 ## resources Used
 
